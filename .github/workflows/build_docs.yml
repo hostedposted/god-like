@@ -1,0 +1,24 @@
+name: build_docs
+
+on:
+    push:
+        branches:
+            - master
+            - main
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        if: github.event.repository.fork == false
+        steps:
+            - uses: actions/checkout@v2
+            - 
+                uses: actions/setup-python@v2
+                with:
+                    python-version: 3.x
+            - run: pip install mkdocs git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git mkdocs-git-revision-date-localized-plugin mike
+            - run: mike set-default 1.x
+            - run: mike deploy --push --update-aliases 1.x latest
+
+env:
+    GH_TOKEN: ${{ secrets.GH_TOKEN }}

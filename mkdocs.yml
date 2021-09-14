@@ -1,0 +1,40 @@
+site_name: God Like (Flask for humans)
+site_url: https://hostedposted.github.io/god-like/
+repo_url: https://github.com/hostedposted/god-like
+
+nav:
+    - Home: index.md
+    - API reference:
+        - API reference: api/api.md
+        - Request: api/request.md
+        - Response: api/response.md
+
+theme:
+    name: material
+    palette:
+        scheme: slate
+        primary: red
+    features:
+        - navigation.sections
+        - navigation.tabs
+        - navigation.top
+        - navigation.tracking
+        - search.highlight
+
+extra:
+    version:
+        provider: mike
+        default: 1.x
+
+plugins:
+    - search
+    - git-revision-date-localized:
+        type: timeago
+        enable_creation_date: true
+        timezone: EST
+
+extra_javascript:
+    - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js
+    - javascript/hljs.js
+extra_css:
+    - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/vs2015.min.css
