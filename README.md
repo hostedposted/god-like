@@ -35,4 +35,4 @@ def index():
 app.run(port=8080)
 ```
 
-Documentation: https://hostedposted.github.io/god-like/
+Documentation: https://hostedposted.github.io/god-like/latest/
