@@ -17,7 +17,6 @@ jobs:
                 with:
                     python-version: 3.x
             - run: pip install mkdocs git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git mkdocs-git-revision-date-localized-plugin mike
-            - run: mike set-default 1.x
             - run: mike deploy --push --update-aliases 1.x latest
 
 env:
