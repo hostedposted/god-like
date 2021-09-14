@@ -1,10 +1,11 @@
 [tool.poetry]
 name = "god-like"
-version = "1.0.0"
+version = "1.0.1"
 description = "Flask for humans."
 authors = ["hostedposted <hostedpostedsite@gmail.com>"]
 repository = "https://github.com/hostedposted/god-like/"
 documentation = "https://hostedposted.github.io/god-like/latest/"
+readme = "README.md"
 license = "MIT"
 
 [tool.poetry.dependencies]
