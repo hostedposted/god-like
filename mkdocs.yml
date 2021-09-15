@@ -25,7 +25,7 @@ theme:
 extra:
     version:
         provider: mike
-        default: 1.x
+        default: latest
 
 extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js
