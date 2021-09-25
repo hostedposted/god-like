@@ -1,0 +1,786 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://hostedposted.github.io/god-like/1.x/api/response/">
+      
+      
+        
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.8+insiders-3.0.1">
+    
+    
+      
+        <title>Response - God Like (Flask for humans)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.dcf81f63.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.1d832a92.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ef5552">
+        
+      
+      <link rel="preload" as="style" href="../../assets/stylesheets/vendor/mermaid.733f213f.min.css">
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/vs2015.min.css">
+    
+    <script>function __md_scope(e,t,_){return new URL(_||(t===localStorage?"../..":"../.."),location).pathname+"."+e}function __md_get(e,t=localStorage,_){return JSON.parse(t.getItem(__md_scope(e,t,_)))}function __md_set(e,t,_=localStorage,o){try{_.setItem(__md_scope(e,_,o),JSON.stringify(t))}catch(e){}}</script>
+    
+      
+
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#response" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-component="outdated" hidden>
+        <aside class="md-banner md-banner--warning">
+          
+        </aside>
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="God Like (Flask for humans)" class="md-header__button md-logo" aria-label="God Like (Flask for humans)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            God Like (Flask for humans)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Response
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/hostedposted/god-like/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../api/" class="md-tabs__link md-tabs__link--active">
+        API reference
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="God Like (Flask for humans)" class="md-nav__button md-logo" aria-label="God Like (Flask for humans)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    God Like (Flask for humans)
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/hostedposted/god-like/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          API reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="API reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          API reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        API reference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../request/" class="md-nav__link">
+        Request
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Response
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Response
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    Properties
+  </a>
+  
+    <nav class="md-nav" aria-label="Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resflask_response" class="md-nav__link">
+    res.flask_response
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rescontent_typecontent_type" class="md-nav__link">
+    res.content_type(content_type)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resdownloadpath-filename-none" class="md-nav__link">
+    res.download(path, filename = None)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resgetfield" class="md-nav__link">
+    res.get(field)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resjsonobj" class="md-nav__link">
+    res.json(obj)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resredirectpath" class="md-nav__link">
+    res.redirect(path)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ressendbody" class="md-nav__link">
+    res.send(body)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ressend_filefile_path" class="md-nav__link">
+    res.send_file(file_path)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ressend_statuscode" class="md-nav__link">
+    res.send_status(code)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resset_headerfields" class="md-nav__link">
+    res.set_header(fields)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resstatuscode" class="md-nav__link">
+    res.status(code)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    Properties
+  </a>
+  
+    <nav class="md-nav" aria-label="Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resflask_response" class="md-nav__link">
+    res.flask_response
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rescontent_typecontent_type" class="md-nav__link">
+    res.content_type(content_type)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resdownloadpath-filename-none" class="md-nav__link">
+    res.download(path, filename = None)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resgetfield" class="md-nav__link">
+    res.get(field)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resjsonobj" class="md-nav__link">
+    res.json(obj)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resredirectpath" class="md-nav__link">
+    res.redirect(path)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ressendbody" class="md-nav__link">
+    res.send(body)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ressend_filefile_path" class="md-nav__link">
+    res.send_file(file_path)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ressend_statuscode" class="md-nav__link">
+    res.send_status(code)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resset_headerfields" class="md-nav__link">
+    res.set_header(fields)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resstatuscode" class="md-nav__link">
+    res.status(code)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/hostedposted/god-like/edit/master/docs/api/response.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                
+                <h1 id="response">Response</h1>
+<p>The <code>res</code> object represents the HTTP response that a GodLike app sends when it gets an HTTP request.</p>
+<p>For example:</p>
+<pre><code class="language-py">@app.get(&quot;/user/&lt;id&gt;&quot;)
+def get_user(req, res):
+    res.send(req.params[&quot;id&quot;])
+</code></pre>
+<p>The <code>res</code> object is an enhanced version of <code>flask.Response</code> object. You can access the flask response object by getting the <code>flask_response</code> attribute of the <code>res</code> object.</p>
+<h2 id="properties">Properties</h2>
+<h3 id="resflask_response">res.flask_response</h3>
+<p>The <code>flask.Response</code> object that the <code>res</code> object wraps.</p>
+<h2 id="methods">Methods</h2>
+<h3 id="rescontent_typecontent_type">res.content_type(content_type)</h3>
+<p>Sets the <code>Content-Type</code> HTTP header to the MIME type as determined by the specified type. If type contains the <code>/</code> character, then it sets the <code>Content-Type</code> to the exact value of <code>type</code>, otherwise it is assumed to be a file extension and the MIME type is looked up in a mapping using the <code>mimetypes.types_map.get</code> method.</p>
+<pre><code class="language-py">res.content_type(&quot;.html&quot;)
+res.content_type(&quot;html&quot;)
+res.content_type(&quot;json&quot;)
+res.content_type(&quot;application/json&quot;)
+res.content_type(&quot;png&quot;)
+</code></pre>
+<h3 id="resdownloadpath-filename-none">res.download(path, filename = None)</h3>
+<p>Transfers the file at path as an "attachment". Typically, browsers will prompt the user for download. By default, the Content-Disposition header "filename=" parameter is path (this typically appears in the browser dialog). Override this default with the filename parameter.</p>
+<p>This method uses res.send_file() to transfer the file.</p>
+<pre><code class="language-py">res.download(&quot;file.pdf&quot;)
+
+res.download(&quot;random_file.pdf&quot;, filename=&quot;file.pdf&quot;)
+</code></pre>
+<h3 id="resgetfield">res.get(field)</h3>
+<p>Returns the HTTP response header specified by <code>field</code>. The match is case-insensitive.</p>
+<pre><code class="language-py">res.get(&quot;Content-Type&quot;)
+</code></pre>
+<h3 id="resjsonobj">res.json(obj)</h3>
+<p>Sends a JSON response. This method sends a response (with the correct content-type) that is the parameter converted to a JSON string using <a href="https://docs.python.org/3/library/json.html#json.dumps">json.dumps</a>.</p>
+<p>The parameter can be any JSON type, including dictionary, list, string, boolean, int or float, and you can also use it to convert other values to JSON.</p>
+<pre><code class="language-py">res.json(None)
+res.json({&quot;user&quot;: &quot;tobi&quot;})
+res.status(500).json({ &quot;error&quot;: &quot;message&quot; })
+</code></pre>
+<h3 id="resredirectpath">res.redirect(path)</h3>
+<p>Redirects to the URL derived from the specified path.</p>
+<pre><code class="language-py">res.redirect(&quot;/foo/bar&quot;)
+res.redirect(&quot;http://example.com&quot;)
+res.redirect(&quot;../login&quot;)
+</code></pre>
+<h3 id="ressendbody">res.send(body)</h3>
+<p>Sends the HTTP response.</p>
+<p>The body parameter can be a string, list, dict, tuple, int, float, bool. For example:</p>
+<pre><code class="language-py">res.send({ &quot;some&quot;: &quot;json&quot; })
+res.send(&quot;&lt;p&gt;some html&lt;/p&gt;&quot;)
+res.status(404).send(&quot;Sorry, we cannot find that!&quot;)
+res.status(500).send({ &quot;error&quot;: &quot;something blew up&quot; })
+</code></pre>
+<h3 id="ressend_filefile_path">res.send_file(file_path)</h3>
+<p>Transfers the file at the given path. Sets the Content-Type response HTTP header field based on the filename's extension.</p>
+<pre><code class="language-py">res.send_file(&quot;file.pdf&quot;)
+</code></pre>
+<h3 id="ressend_statuscode">res.send_status(code)</h3>
+<p>Sets the response HTTP status code to <code>code</code> and sends the registered status message as the text response body. If an unknown status code is specified, the response body will just be the code number.</p>
+<pre><code class="language-py">res.sendStatus(404)
+</code></pre>
+<h3 id="resset_headerfields">res.set_header(fields)</h3>
+<p>Sets the response's HTTP headers field to value.</p>
+<pre><code class="language-py">res.set_header({
+    &quot;Content-Type&quot;: &quot;text/plain&quot;,
+    &quot;Content-Length&quot;: &quot;123&quot;,
+    &quot;ETag&quot;: &quot;12345&quot;
+})
+</code></pre>
+<h3 id="resstatuscode">res.status(code)</h3>
+<p>Sets the HTTP status for the response.</p>
+<pre><code class="language-py">res.status(400).send(&quot;Bad Request&quot;)
+res.status(404).send_file(&quot;/absolute/path/to/404.png&quot;)
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../request/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Request" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Request
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs Insiders
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b473f883.min.js", "version": {"provider": "mike", "default": "latest"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e7b111c5.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../javascript/hljs.js"></script>
+      
+    
+  </body>
+</html>
